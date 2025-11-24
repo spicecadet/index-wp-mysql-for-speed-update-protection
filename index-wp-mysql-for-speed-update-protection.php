@@ -3,9 +3,10 @@
  * Plugin Name: Index WP MySQL For Speed - Update Protection
  * Description: Prevents WordPress core updates from reverting database optimizations made by Index WP MySQL For Speed
  * Version: 1.0
- * Author: Edmund Turbin
+ * Author: Your Name
  */
 
+// Filter to protect Index WP MySQL For Speed customizations during WordPress updates
 add_filter( 'dbdelta_queries', 'imfspeeed_protect_indexes', 10, 1 );
 
 /**
@@ -13,7 +14,6 @@ add_filter( 'dbdelta_queries', 'imfspeeed_protect_indexes', 10, 1 );
  *
  * @param string[] $queries An array of dbDelta SQL queries.
  * @return string[] Modified array of queries.
- * @since 1.0.0
  */
 function imfspeeed_protect_indexes( $queries ) {
     // Look for the core update lock
